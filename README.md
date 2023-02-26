@@ -15,7 +15,7 @@ SpringBoot2+SSE+redis发布订阅服务端推送消息
 #最新
 <dependency>
     <groupId>io.github.huashijun</groupId>
-    <artifactId>ssse-spring-boot-starter</artifactId>
+    <artifactId>sse-spring-boot-starter</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```
@@ -95,16 +95,14 @@ public class SseRest {
 
     @ResponseBody
     @GetMapping(path = "remove")
-    public String remove(String userId) {
+    public void remove(String userId) {
         sseUtil.remove(userId);
-        return "over";
     }
 
     @ResponseBody
     @GetMapping(path = "send")
-    public String send(String msg) {
+    public void send(String msg) {
         redisUtils.convertAndSend("huashijun_sse",msg);
-        return "over";
     }
 }
 ```
