@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.huashijun.sse.config.SseConfig,\
+com.huashijun.sse.config.SseReceiveListenerConfig
